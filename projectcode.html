@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programming Concepts Overview</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 40px;
+            animation: slideDown 1.5s ease;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            animation: fadeIn 2s ease;
+        }
+
+        .box h2 {
+            color: #ffdd57;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        .box p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin: 40px 0;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 15px 30px;
+            background: #ffdd57;
+            color: #000;
+            border-radius: 30px;
+            font-size: 18px;
+            margin: 10px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .buttons a:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px #ffdd57; }
+            to { text-shadow: 0 0 15px #fff; }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Language : c++</h1>
+    <h1>Core Programming Concepts <br> use in Hospital management sytem</h1>
+
+    <div class="container">
+
+        <div class="box">
+            <h2>Basic Input / Output</h2>
+            <p>
+                Basic input and output are used to take data from the user and
+                display results on the screen. They help programs interact
+                with users.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Conditions (If / Else / switch)</h2>
+            <p>
+                Conditions are used to make decisions in a program.
+                They allow the program to execute different code
+                based on true or false conditions.
+
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Loops</h2>
+            <p>
+                Loops are used to repeat a block of code multiple times.
+                They save time and reduce code repetition.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Functions</h2>
+            <p>
+                Functions are reusable blocks of code.
+                They improve code organization and make programs
+                easier to understand and maintain.
+                <br>
+             <details style="border: #000 solid 2px; color: #000; background-color: white;">  void addPatient() {
+    ofstream file("patients.txt", ios::app);
+    string name, disease;
+    int age;
+    char gender;
+    <br>
+
+    cout << "\nEnter Patient Name: ";
+    cin.ignore();
+    getline(cin, name);
+    <br>
+    cout << "Enter Age: ";
+    cin >> age;
+    <br>
+    cout << "Enter Gender (M/F): ";
+    cin >> gender;
+    <br>
+    cout << "Enter Disease: ";
+    cin.ignore();
+    getline(cin, disease);
+    <br>
+    file << name << " | " << age << " | " << gender << " | " << disease << endl;
+    file.close();
+
+             }<br>
+            </details> 
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Arrays</h2>
+            <p>
+                Arrays store multiple values in a single variable.
+                They help manage large amounts of related data efficiently.
+            </p>
+        </div>
+
+        <div class="buttons">
+            <a href="ipo.html">I-P-O CHART</a>
+            <a href="management.cpp"> Full code</a>
+            <a href="ipo1.html">output</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

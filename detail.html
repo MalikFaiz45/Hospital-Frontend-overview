@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System - Programming Concepts</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 42px;
+            animation: slideDown 1.5s ease;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ffdd57;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            animation: fadeIn 2s ease;
+            text-align: left;
+        }
+
+        .box p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 15px 35px;
+            background: #ffdd57;
+            color: #000;
+            border-radius: 30px;
+            font-size: 18px;
+            margin: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .buttons a:hover {
+            background: white;
+            transform: scale(1.1);
+            color: #000;
+            box-shadow: 0 0 15px #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px #ffdd57; }
+            to { text-shadow: 0 0 15px #fff; }
+        }
+
+        details {
+            border: 2px solid #ffdd57;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hospital Management System</h1>
+    <h1>Programming Concepts in C++</h1>
+
+    <div class="container">
+
+        <div class="box">
+            <h2>1. Structs</h2>
+            <p>
+                <strong>Structs</strong> are used to group related data together into one entity.
+                <br>In our hospital system, we use <code>person</code> for patients and <code>appointment</code> for online appointments.
+            </p>
+            <details>
+                <summary>Example of patient struct</summary>
+                <pre>
+struct person {
+    int id, age;
+    string name, disease;
+    string department;
+    string emergency;
+    string referral;
+    string appointment;
+    int doctorFee;
+    int medicineFee;
+    int totalFee;
+};
+                </pre>
+            </details>
+        </div>
+
+        <div class="box">
+            <h2>2. Functions</h2>
+            <p>
+                Functions are reusable blocks of code that perform a specific task.
+                <br>They improve code organization, readability, and reduce repetition.
+            </p>
+            <details>
+                <summary>Example: Automatic Department Function</summary>
+                <pre>
+string autoDepartment(string disease) {
+    if(disease=="fracture" || disease=="heart attack" || disease=="kidney failure")
+        return "ICU";
+    else
+        return "OPD";
+}
+                </pre>
+            </details>
+        </div>
+
+        <div class="box">
+            <h2>3. Automatic Functions</h2>
+            <p>
+                Automatic functions calculate values based on input data.
+                <br>For example, determining emergency status, referral hospital, or calculating fees automatically.
+            </p>
+            <details>
+                <summary>Examples of automatic functions</summary>
+                <pre>
+autoEmergency(disease) -> YES/NO
+autoReferral(disease) -> Returns referral hospital if needed
+calculateDoctorFee(department) -> Returns fee
+calculateMedicineFee(disease) -> Returns fee
+                </pre>
+            </details>
+        </div>
+
+        <div class="box">
+            <h2>4. File Input / Output</h2>
+            <p>
+                File I/O allows saving patient and appointment records permanently.
+                <br>Functions like <code>saveAllPatientsToFile()</code> and <code>readFromFile()</code> help store and retrieve data.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>5. Arrays</h2>
+            <p>
+                Arrays store multiple values of the same type.
+                <br>Example: <code>person patient[MAX]</code> stores all patient records.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>6. Loops</h2>
+            <p>
+                Loops are used to repeat a block of code.
+                <br>Example: Looping through all patients to display their details.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>7. Conditional Statements</h2>
+            <p>
+                Conditional statements (<code>if/else</code>, <code>switch</code>) are used to make decisions.
+                <br>Example: Selecting doctor based on user choice, checking disease type, or emergency status.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>8. Main Menu & Function Calls</h2>
+            <p>
+                The main function uses a menu system to call different functions:
+                <ul>
+                    <li>Register Patient</li>
+                    <li>Review Records</li>
+                    <li>Book Online Appointment</li>
+                    <li>View Appointments</li>
+                    <li>Search Patient</li>
+                    <li>Delete Patient</li>
+                </ul>
+                This demonstrates the use of <strong>loops, switch-case, and function calls</strong>.
+            </p>
+        </div>
+
+        <div class="buttons">
+            <a href="ipo1.html" target="_blank">I_P_O chart</a>
+            <a href="management.cpp" target="_blank">Full Code</a>
+            <a href="ipo.html" target="_blank">I-P-O CHART</a>
+            <!-- <a href="management.cpp" target="_blank">Full Code</a> -->
+                     
+        </div>
+
+    </div>
+
+</body>
+</html>

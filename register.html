@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patient Registration</title>
+<style>
+body{
+    font-family:Arial;
+    background:#eef6f8;
+}
+.form-box{
+    width:400px;
+    margin:80px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+h2{
+    text-align:center;
+    color:#0a4d68;
+}
+input, select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+button{
+    width:100%;
+    padding:10px;
+    background:#0a4d68;
+    color:white;
+    border:none;
+    font-size:16px;
+}
+button:hover{
+    background:#146c94;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+<h2>Patient Registration</h2>
+
+<form>
+    <input type="text" placeholder="Patient Name" required>
+    <input type="number" placeholder="Age" required>
+    <select>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+    <input type="text" placeholder="Disease">
+    <input type="text" placeholder="Contact Number">
+    <button type="submit">Register Patient</button>
+</form>
+
+</div>
+
+</body>
+</html>

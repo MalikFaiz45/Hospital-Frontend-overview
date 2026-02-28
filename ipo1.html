@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System - IPO Chart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 40px;
+            color: #ffdd57;
+            text-shadow: 0 0 10px #ffdd57;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffdd57;
+            border-radius: 12px;
+            padding: 20px;
+            width: 30%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px #ffdd57;
+        }
+
+        .box h2 {
+            color: #ffdd57;
+            margin-bottom: 15px;
+        }
+
+        .box p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        pre {
+            text-align: left;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 900px) {
+            .box { width: 45%; }
+        }
+
+        @media screen and (max-width: 600px) {
+            .box { width: 90%; }
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #ffdd57;
+            color: #000;
+            border-radius: 30px;
+            font-size: 18px;
+            margin: 30px 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: scale(1.1);
+            color: #000;
+            box-shadow: 0 0 15px #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hospital Management System - IPO Chart</h1>
+
+    <div class="container">
+
+        <div class="box">
+            <h2>Input</h2>
+            <p>
+                - Patient ID, Name, Age, Disease<br>
+                - Phone Number (for appointment)<br>
+                - Doctor choice<br>
+                - Menu choice for actions (Register, Review, Book, Delete)
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Processing</h2>
+            <p>Pseudocode:</p>
+            <pre>
+1. Read patient/appointment details from user
+2. IF registering patient THEN
+       - Assign Department using autoDepartment(disease)
+       - Assign Emergency using autoEmergency(disease)
+       - Assign Referral using autoReferral(disease)
+       - Calculate DoctorFee and MedicineFee
+       - Calculate TotalFee
+       - Store patient data in array
+       - Save to file
+3. IF booking appointment THEN
+       - Choose doctor and timing
+       - Store appointment in array
+       - Save to file
+4. IF viewing or searching THEN
+       - Read data from file
+       - Display requested records
+5. IF deleting patient THEN
+       - Find patient by ID or Name
+       - Remove from array
+       - Update file
+            </pre>
+        </div>
+
+        <div class="box">
+            <h2>Output</h2>
+            <p>
+                - Confirmation messages (e.g., "Patient Registered Successfully", "Appointment Booked")<br>
+                - Patient records displayed in console<br>
+                - Appointment details displayed<br>
+                - Error messages for invalid input<br>
+                - Updated patient file and appointment file
+            </p>
+        </div>
+
+    </div>
+
+    <a href="detail.html" class="back-button">Back to Concepts Page</a>
+
+</body>
+</html>

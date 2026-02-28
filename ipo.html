@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IPO Chart - Hospital Management System</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    color:#0a4d68;
+    margin-bottom:40px;
+}
+
+/* IPO CONTAINER */
+.ipo-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+}
+
+/* BOX STYLE */
+.box{
+    flex:1;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    padding:20px;
+    min-height:320px;
+    position:relative;
+}
+
+/* BOX HEADER */
+.box h2{
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+    color:white;
+    margin-bottom:20px;
+}
+
+.input h2{ background:#1abc9c; }
+.process h2{ background:#3498db; }
+.output h2{ background:#9b59b6; }
+
+/* LIST */
+.box ul{
+    list-style:none;
+    padding-left:10px;
+}
+
+.box ul li{
+    padding:10px;
+    margin-bottom:10px;
+    background:#eef6f8;
+    border-radius:6px;
+}
+
+/* ARROWS */
+.arrow{
+    font-size:40px;
+    color:#555;
+    margin-top:140px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>IPO Chart – Hospital Management System</h1>
+
+<div class="ipo-container">
+
+    <!-- INPUT -->
+    <div class="box input">
+        <h2>INPUT</h2>
+        <ul>
+            <li>Patient Name</li>
+            <li>Age</li>
+            <li>Gender</li>
+            <li>Disease Details</li>
+            <li>Doctor Selection</li>
+            <li>Appointment Date & Time</li>
+        </ul>
+    </div>
+
+    <div class="arrow">➡</div>
+
+    <!-- PROCESS -->
+    <div class="box process">
+        <h2>PROCESS</h2>
+        <ul>
+            <li>Validate user input</li>
+            <li>Store data using C++ file handling</li>
+            <li>Update patient records</li>
+            <li>Schedule appointment</li>
+            <li>Count total patients</li>
+            <li>Count appointments</li>
+        </ul>
+    </div>
+
+    <div class="arrow">➡</div>
+
+    <!-- OUTPUT -->
+    <div class="box output">
+        <h2>OUTPUT</h2>
+        <ul>
+            <li>Patient registration confirmation</li>
+            <li>Appointment booking confirmation</li>
+            <li>Total patients displayed</li>
+            <li>Total appointments displayed</li>
+            <li>Doctor schedule shown</li>
+            <li>Updated hospital dashboard</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
