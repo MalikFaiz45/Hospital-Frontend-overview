@@ -2,478 +2,483 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hospital Management System</title>
 
 <style>
+
+/* GLOBAL */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-    text-decoration: none;
-    
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+text-decoration:none;
 }
-body{background-color: linear-gradient(135deg,#f8fbff,#e3f2fd,);
+
+body{
+background:linear-gradient(135deg,#f8fbff,#e3f2fd);
 }
-/* night mode */
+
+img{
+max-width:100%;
+height:auto;
+}
+
+/* NIGHT MODE */
+
 body.night{
-    background:#0b1320;
-    color:#e5e7eb;
+background:#0b1320;
+color:#e5e7eb;
 }
 
 body.night header{
-    background:#020617;
+background:#020617;
 }
 
-body.night .box{
-    background:rgba(30,41,59,0.9);
-    color:#e5e7eb;
+body.night .card{
+background:#1e293b;
+color:white;
 }
 
 body.night .hero{
-    background:
-      linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-      url("hospital.jpeg") center/cover no-repeat;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("hospital.jpeg") center/cover no-repeat;
 }
-
-body.night a{ color:#7dd3fc; }
 
 /* HEADER */
+
 header{
-    background:#0a4d68;
-    color:white;
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position: sticky;top: 0;z-index: 1000;
-    animation: slideDown 2s ease;
+background:#0a4d68;
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
-.nav2{
-    margin-top: 2px;
-      background-color: black; 
-       /* color:blue; */
-       color: white;
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
-    animation: slideDown 1s ease;
+
+.logo{
+font-size:22px;
+font-weight:bold;
 }
-.nav2 a{color: #eef6f8;}
 
+/* NAV */
 
-@keyframes slideDown{
-    from{transform:translateY(-100px); opacity:0;}
-    to{transform:translateY(0); opacity:1;}
+nav{
+display:flex;
+align-items:center;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
+color:white;
+margin-left:20px;
+font-weight:bold;
 }
 
 nav a:hover{
-    color:#ffd700;
+color:#ffd700;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* NAV2 */
+
+.nav2{
+background:black;
+color:white;
+padding:12px;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+
+.nav2 a{
+color:white;
 }
 
 /* HERO */
 
-
-/* Front page background */
-.hero {
-    height: 90vh;
-    background-image: url("hospital.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero{
+height:90vh;
+background:url("hospital.jpeg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-/* Text style */
-.hero h1 {
-    color: white;
-    font-size: 40px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 40px;
-    border-radius: 10px;
-}
-/* .hero{
-    height:100vh;
-    background:url("hospital.jpg") center/cover no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+.box{
+background:rgba(0,0,0,0.6);
+padding:30px 40px;
+border-radius:12px;
+color:white;
+text-align:center;
 }
 
-.hero h1{
-    color:white;
-    font-size:45px;
-    animation: zoomFade 2s ease;
-    text-shadow:2px 2px 8px black;
-} */
-
-@keyframes zoomFade{
-    from{transform:scale(0.7); opacity:0;}
-    to{transform:scale(1); opacity:1;}
+.text span{
+display:inline-block;
+opacity:0;
+animation:show 1s forwards;
 }
 
-/* UNIVERSITY INFO */
+.text span:nth-child(1){animation-delay:0.2s;}
+.text span:nth-child(2){animation-delay:0.4s;}
+.text span:nth-child(3){animation-delay:0.6s;}
+.text span:nth-child(4){animation-delay:0.8s;}
+.text span:nth-child(5){animation-delay:1s;}
+
+@keyframes show{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* MARQUEE */
+
+.marquee{
+margin-top:15px;
+overflow:hidden;
+white-space:nowrap;
+background:#203a43;
+padding:8px;
+border-radius:6px;
+}
+
+.marquee span{
+display:inline-block;
+padding-left:100%;
+animation:move 8s linear infinite;
+}
+
+@keyframes move{
+from{transform:translateX(0);}
+to{transform:translateX(-100%);}
+}
+
+/* UNIVERSITY */
+
 .university-info{
-    background:#eef6f8;
-    padding:40px;
-    text-align:center;
-    animation: fadeIn 2s ease;
+background:#eef6f8;
+padding:40px;
+text-align:center;
 }
 
 .university-info h2{
-    color:#0a4d68;
-    margin-bottom:10px;
-}
-
-.university-info p{
-    font-size:18px;
-    color:#333;
-}
-
-/* SECTION */
-section{
-    padding:70px 40px;
-    text-align:center;
-}
-
-section h2{
-    margin-bottom:20px;
-    color:#f4f4f4;
-    font-size:32px;
-    background-color: #333;
+color:#0a4d68;
 }
 
 /* MEMBERS */
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
 .members{
-    display:flex;
-    justify-content:center;
-    /* align-items: center; */
-    gap:30px;
-    /* gap:50px; */
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
 }
-.members h3{
-    background-color: #020617;
-    color: #e3f2fd;
-}
-.members p{background-color: #020617;
-color: #e5e7eb;}
 
 .card{
-    width:220px;
-    background:#f4f4f4;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
-    transition:0.4s;
-    opacity:0;
-    transform:translateY(40px);
+width:230px;
+background:#f4f4f4;
+padding:20px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
 }
 
 .card.show{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.05);
+transform:translateY(-10px);
 }
 
 .card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
+height:250px;
+object-fit:cover;
+border-radius:10px;
 }
 
 /* PROFESSOR */
+
 .professor{
-    max-width:600px;
-    margin:auto;
-    background:#eef6f8;
-    padding:30px;
-    border-radius:12px;
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s;
+max-width:600px;
+margin:auto;
+background:#eef6f8;
+padding:30px;
+border-radius:12px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
 }
 
 .professor.show{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
-.professor p{background-color: #020617;
-color: #e3f2fd;}
 
 .professor img{
-    width:200px;
-    height:260px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:20px;
+width:200px;
+height:250px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
 }
-
 
 /* FOOTER */
+
 footer{
-    background:#0a4d68;
-    color:white;
-    /* text-align:left; */
-    padding:15px;
-    animation: fadeIn 3s ease;
+background:#0a4d68;
+color:white;
+text-align:center;
+padding:25px;
 }
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:3;}
-}
+
 footer a{
-    color: black;
-    background-color: #f4f4f4;
-    line-break: normal;
-    text-align: right;
-    margin-left: 30px;
+color:white;
+display:block;
+margin:6px 0;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+position:absolute;
+top:70px;
+left:0;
+background:#0a4d68;
+width:100%;
+flex-direction:column;
+display:none;
+}
+
+nav.active{
+display:flex;
+}
+
+nav a{
+margin:15px;
+}
+
+.hamburger{
+display:block;
+}
+
+header{
+padding:15px;
+}
+
+.nav2{
+flex-direction:column;
+gap:10px;
+}
+
+.hero{
+height:70vh;
+}
+
+.members{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:90%;
+}
+
+.professor{
+width:90%;
+}
 
 }
-div h4 a{background-color: black;
-    color: #eef6f8;
-display: flex;
-justify-content: left;}
 
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:3;}
-}
-/* margueee like animation */
-.box{
-        background:#ffffffef;
-        padding:30px 40px;
-        border-radius:12px;
-        text-align:center;
-        box-shadow:0 0 25px rgba(0,0,0,0.5);
-    }
-
-    /* word by word */
-    .text span{
-        opacity:3;
-        display:inline-block;
-        animation:show 2s forwards;
-    }
-
-    .text span:nth-child(1){animation-delay:0.2s;}
-    .text span:nth-child(2){animation-delay:0.4s;}
-    .text span:nth-child(3){animation-delay:0.6s;}
-    .text span:nth-child(4){animation-delay:0.8s;}
-    .text span:nth-child(5){animation-delay:1s;}
-
-    @keyframes show{
-        from{opacity:0; transform:translateY(10px);}
-        to{opacity:1; transform:translateY(0);}
-    }
-
-    /* marquee */
-    .marquee{
-        margin-top:20px;
-        overflow:hidden;
-        white-space:nowrap;
-        background:#203a43;
-        color:white;
-        padding:8px;
-        border-radius:6px;
-    }
-
-    .marquee span{
-        display:inline-block;
-        padding-left:100%;
-        animation:move 8s linear infinite;
-    }
-
-    @keyframes move{
-        from{transform:translateX(0);}
-        to{transform:translateX(-100%);}
-    }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-    <h1>Hospital Management System</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="detail.html">project</a>
- <!-- <a href="hospital.cpp">project code</a> -->
-        <a href="#">Team</a>
-        <a href="#">Supervisor</a>
-        <a href="#">Contact</a>
-        <button class="toggle-btn" onclick="toggleNight()">🌙 Night Mode</button>
-    </nav>
-    
-    <!-- <div class="nav2">
-        <a href="DASHBOARD.html">DASHBOARD</a>
-        <a href="register.html">PATIENT REGISTERATION</a>
 
-        <a href="appointment.html">APPOINTMENT</a>
-         <a href="#">Supervisor</a>
-        <a href="#">Contact</a> --> 
-    </div>
+<div class="logo">Hospital System</div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
+<a href="#">Home</a>
+<a href="#">Project</a>
+<a href="#">Team</a>
+<a href="#">Supervisor</a>
+<a href="#">Contact</a>
+
+<button onclick="toggleNight()">🌙</button>
+
+</nav>
+
 </header>
- <div class="nav2">
-        <a href="DASHBOARD.html">DASHBOARD</a>
-        <a href="register.html">PATIENT REGISTERATION</a>
 
-        <a href="appointment.html">APPOINTMENT</a>
-        <!-- <a href="#">Supervisor</a>
-        <a href="#">Contact</a> -->
-    </div>
+<div class="nav2">
+<a href="#">Dashboard</a>
+<a href="#">Patient Registration</a>
+<a href="#">Appointment</a>
+</div>
 
-<!-- HERO -->
 <div class="hero">
-    <!-- <section> <img src="hospital.jpeg" alt="hospital picture" ></section>
-    <img src="hospital.jpeg" alt="hospital picture" > -->
-    <!-- <h1> welcome to Hospital Management System </h1> -->
-    <div class="box">
 
-    <h2 class="text">
-        <span>Welcome</span>
-        <span>to</span>
-        <span>Hospital</span>
-        <span>Management</span>
-        <span>System</span>
-    </h2>
+<div class="box">
 
-    <div class="marquee">
-        <span>Efficient • Secure • Reliable Healthcare Management</span>
-    </div>
+<h2 class="text">
+<span>Welcome</span>
+<span>to</span>
+<span>Hospital</span>
+<span>Management</span>
+<span>System</span>
+</h2>
 
-</div>
+<div class="marquee">
+<span>Efficient • Secure • Reliable Healthcare Management</span>
 </div>
 
-<!-- UNIVERSITY INFO -->
+</div>
+
+</div>
+
 <div class="university-info">
-    <h2>University of Azad Jammu and Kashmir</h2>
-    <p><strong>King Abdullah Campus</strong></p>
-    <p>Discipline: <strong>BS Artificial Intelligence</strong></p>
-    <p>Semester: <strong>1st Semester</strong></p>
-     <p>Batch #: <strong>2025 - 2029</strong></p>
+
+<h2>University of Azad Jammu and Kashmir</h2>
+
+<p><b>King Abdullah Campus</b></p>
+
+<p>Discipline: BS Artificial Intelligence</p>
+
+<p>Semester: 1st Semester</p>
+
+<p>Batch: 2025 - 2029</p>
+
 </div>
 
-<!-- GROUP MEMBERS -->
- 
- 
-<section id="sec">
+<section>
+
 <h2>Group Members</h2>
 
-    <!-- <div class="card">
-    <img src="WhatsApp Image 2026-01-01 at 11.32.26 AM.jpeg">
-    <h3>Faiz Anwar</h3>
-     <h3>Roll No: 16</h3>
-    <p>BS AI – 1st Semester</p>
-</div> -->
-<section>
-    
 <div class="members">
+
 <div class="card">
-    <img src="WhatsApp Image 2026-01-01 at 11.32.26 AM.jpeg">
-    <h3>Faiz Anwar</h3>
-     <h3>Roll No: 16</h3>
-     <!-- <h3>DIRECTOR</h3> -->
-     
-    <h3>BS AI – 1st Semester</h3>
+<img src="WhatsApp Image 2026-01-01 at 11.32.26 AM.jpeg">
+<h3>Faiz Anwar</h3>
+<p>Roll No: 16</p>
+<p>BS AI – 1st Semester</p>
 </div>
+
+<div class="card">
+<img src="member2.jpg">
+<h3>Sara Mughal</h3>
+<p>Roll No: 20</p>
+<p>BS AI – 1st Semester</p>
+</div>
+
+<div class="card">
+<img src="member3.jpg">
+<h3>Haroon Rasheed</h3>
+<p>Roll No: 42</p>
+<p>BS AI – 1st Semester</p>
+</div>
+
+</div>
+
 </section>
 
-<div class="members">
-<div class="card">
-    <img src="WhatsApp Image 2026-01-01 at 11.32.26 AM.jpeg">
-    <h3>Faiz Anwar</h3>
-     <h3>Roll No: 16</h3>
-     <!-- <h3>DIRECTOR</h3> -->
-     
-    <p>BS AI – 1st Semester</p>
-</div>
-
-<div class="card">
-    <img src="member2.jpg">
-    <h3>sara Mughal</h3>
-    <h3>Roll No : 20</h3>
-    <p>BS AI – 1st Semester</p>
-</div>
-
-
-<div class="card">
-    <img src="member3.jpg">
-    <h3>Haroon Rasheed</h3>
-    <h3>Roll No : 42</h3>
-    <p>BS AI – 1st Semester</p>
-</div>
-
-
-</div>
-</section>
-
-<!-- PROFESSOR -->
 <section>
+
 <h2>Project Supervisor</h2>
+
 <div class="professor">
-    <img src="doctor.jpeg">
-    <h3 style="font-size: 20px;color: white;background-color: black;">Dr. WAJID AZIZ</h3>
-    <p style="font-size: 17px;color: white;background-color: black;">DESIGNATION : PROFESSOR </p>
-     <p style="font-size: 17px;color: white;background-color: black;">EDUCATION : PHD (PAKISTAN) <br> * : post DOc (UK) </p>
-      <p style="font-size: 17px;color: white;background-color: black;">EXPERIENCE : 18 year(uajk) <br> * : 5 year in University of jedda saudi arabia </p>
-    <p>Department of Computer Science</p>
-    <p>University of Azad Jammu and Kashmir</p>
+
+<img src="doctor.jpeg">
+
+<h3>Dr. Wajid Aziz</h3>
+
+<p>Professor</p>
+
+<p>PhD (Pakistan) | Post Doc (UK)</p>
+
+<p>18 Years Experience (UAJK)</p>
+
 </div>
+
 </section>
 
-<!-- FOOTER -->
 <footer>
-© 2026 Hospital Management System  
-<br>
-<h1>Contact Us........</h1>
-<div>
-    <h4><a href="https://www.Facebook.com/Faiz Anwar">Facebook :www.Facebook.com/Faiz Anwar</a></h2><br>
-     <h4><a href="https://www.whatsapp.com">Whatsapp :  +92347- 8153632</a></h2><br>
-    <h4><a href="https://www.linkedin.com/in/malik-faiz-anwar-425a7a3a3/">Linkedin :  https://www.linkedin.com/in/malik-faiz-anwar-425a7a3a3/</a></h2><br>
-    <h4><a href="https://github.com/MalikFaiz45">github :  https://github.com/MalikFaiz45</a></h2><br>
-            <h4><a href="https://www.istagram.com/MalikFaiz_45">Instagram :  https://Instagram.com/MalikFaiz45</a></h2><br>
-</div>
+
+<h3>Contact Us</h3>
+
+<a href="">Facebook</a>
+
+<a href="#">WhatsApp</a>
+
+<a href="https://www.linkedin.com/in/faiz-anwar-425a7a3a3/">LinkedIn</a>
+
+<a href="#">GitHub</a>
+
 </footer>
 
 <script>
-/* Scroll Animations */
-const cards = document.querySelectorAll('.card');
-const professor = document.querySelector('.professor');
 
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const pos = card.getBoundingClientRect().top;
-        if(pos < window.innerHeight - 100){
-            card.classList.add('show');
-        }
-    });
+/* HAMBURGER MENU */
 
-    const profPos = professor.getBoundingClientRect().top;
-    if(profPos < window.innerHeight - 100){
-        professor.classList.add('show');
-    }
-});
-function toggleNight(){
-    document.body.classList.toggle("night");
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
 }
+
+/* NIGHT MODE */
+
+function toggleNight(){
+document.body.classList.toggle("night");
+}
+
+/* SCROLL ANIMATION */
+
+const cards=document.querySelectorAll('.card');
+const professor=document.querySelector('.professor');
+
+window.addEventListener('scroll',()=>{
+
+cards.forEach(card=>{
+const pos=card.getBoundingClientRect().top;
+
+if(pos<window.innerHeight-100){
+card.classList.add('show');
+}
+
+});
+
+const profPos=professor.getBoundingClientRect().top;
+
+if(profPos<window.innerHeight-100){
+professor.classList.add('show');
+}
+
+});
+
 </script>
 
 </body>
